@@ -1,4 +1,4 @@
-FROM nvidia/cuda:cudnn-runtime
+FROM nvidia/cuda:cudnn
 
 RUN apt-get update \
 &&  apt-get install -y \
