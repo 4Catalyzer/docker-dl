@@ -1,4 +1,4 @@
 FROM 4catalyzer/theano
 
 RUN pip --no-cache-dir install \
-        git+git://github.com/Lasagne/Lasagne.git
+        https://github.com/Lasagne/Lasagne/archive/master.zip

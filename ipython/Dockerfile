@@ -1,15 +1,18 @@
 FROM nvidia/cuda:cudnn
 
 RUN apt-get update \
-&&  apt-get install -y \
+&&  apt-get install -y --no-install-recommends \
+        ca-certificates \
         curl \
+        gfortran \
         libfreetype6-dev \
+        liblapack-dev \
+        libopenblas-dev \
         libpng12-dev \
         libzmq3-dev \
         pkg-config \
-        python-numpy \
-        python-pip \
-        python-scipy \
+        python \
+        python-dev \
 &&  apt-get clean \
 &&  rm -rf /var/lib/apt/lists/*
 
@@ -21,6 +24,8 @@ RUN pip --no-cache-dir install \
         ipykernel \
         jupyter \
         matplotlib \
+        numpy \
+        scipy \
 &&  python -m ipykernel.kernelspec
 
 COPY run_jupyter.sh /
