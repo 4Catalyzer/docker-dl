@@ -5,6 +5,7 @@ RUN apt-get update \
         ca-certificates \
         curl \
         gfortran \
+        git \
         libfreetype6-dev \
         liblapack-dev \
         libopenblas-dev \
