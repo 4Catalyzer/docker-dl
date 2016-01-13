@@ -20,13 +20,16 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py \
 &&  python get-pip.py \
 &&  rm get-pip.py
 
+# Use two set pip install for scikit-learn due to package not using install_requires
+# See: http://stackoverflow.com/questions/33806443/installing-scikit-learn-and-scipy-on-elastic-beanstalk-with-pip-and-requirements
 RUN pip --no-cache-dir install \
         ipykernel \
         jupyter \
         matplotlib \
         numpy \
-        scikit-learn \
         scipy \
+&&  pip --no-cache-dir install \
+        scikit-learn \
 &&  python -m ipykernel.kernelspec
 
 COPY run_jupyter.sh /
