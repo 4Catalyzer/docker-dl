@@ -8,6 +8,6 @@ RUN apt-get update \
 &&  rm -rf /var/lib/apt/lists/*
 
 RUN pip --no-cache-dir install --no-deps \
-        git+git://github.com/fchollet/keras.git \
+        git+https://github.com/fchollet/keras.git \
 &&  mkdir .keras \
 &&  echo "{\"backend\": \"tensorflow\"}" > .keras/keras.json
