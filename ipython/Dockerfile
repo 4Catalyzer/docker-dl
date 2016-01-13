@@ -7,6 +7,7 @@ RUN apt-get update \
         gfortran \
         git \
         libfreetype6-dev \
+        libjpeg-dev \
         liblapack-dev \
         libopenblas-dev \
         libpng12-dev \
@@ -28,6 +29,7 @@ RUN pip --no-cache-dir install \
         jupyter \
         matplotlib \
         numpy \
+        Pillow \
         scipy \
 &&  pip --no-cache-dir install \
         scikit-learn \
