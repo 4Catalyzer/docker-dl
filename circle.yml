@@ -1,0 +1,16 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+  override:
+    - docker info
+    - ./.circle-load-all.sh
+    - ./build-all.sh
+    - ./.circle-save-all.sh
+
+test:
+  override:
+    - docker images
