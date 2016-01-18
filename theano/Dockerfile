@@ -6,5 +6,5 @@ ENV PATH=/usr/local/cuda/bin:$PATH \
 
 RUN pip --no-cache-dir install \
         git+https://github.com/Theano/Theano.git \
-&&  echo "[global]\ndevice=gpu\nfloatX=float32\n[nvcc]\nfastmath=True\n[lib]\ncnmem=0.97" > \
+&&  echo "[global]\ndevice=gpu\nfloatX=float32\nallow_gc=False\n[nvcc]\nfastmath=True\n[lib]\ncnmem=0.97" > \
         /root/.theanorc
