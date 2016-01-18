@@ -1,16 +1,11 @@
 #!/bin/sh
 
+set -v
+
 mkdir -p ~/docker
 
-ls -al ~/docker/
+rm ~/docker/*.tar
 
-docker save 4catalyzer/ipython > ~/docker/ipython.tar
-docker save 4catalyzer/theano > ~/docker/theano.tar
-
-docker save 4catalyzer/lasagne > ~/docker/lasagne.tar
-docker save 4catalyzer/nolearn > ~/docker/nolearn.tar
-
-docker save 4catalyzer/keras:theano > ~/docker/keras-theano.tar
-docker save 4catalyzer/keras:tf > ~/docker/keras-tf.tar
+docker save 4catalyzer/ipython 4catalyzer/theano 4catalyzer/lasagne 4catalyzer/nolearn 4catalyzer/keras:theano 4catalyzer/keras:tf > ~/docker/image.tar
 
 ls -al ~/docker/
