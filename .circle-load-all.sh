@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ls -al ~/docker/
+
 if [[ -e ~/docker/ipython.tar ]]; then docker load -i ~/docker/ipython.tar; fi
 if [[ -e ~/docker/theano.tar ]]; then docker load -i ~/docker/theano.tar; fi
 
