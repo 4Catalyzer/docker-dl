@@ -1,6 +1,6 @@
 FROM 4catalyzer/tensorflow:latest-devel-gpu-aws
 
-RUN pip --no-cache-dir install --no-deps \
+RUN pip --no-cache-dir install -U --no-deps \
         git+https://github.com/fchollet/keras.git#egg=Keras \
         scipy \
         pyyaml \
