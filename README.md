@@ -1,2 +1,3 @@
 # docker-dl
-Dockerfiles for deep learning
+
+Dockerfiles for deep learning.
