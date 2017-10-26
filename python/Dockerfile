@@ -37,6 +37,12 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py \
 &&  python get-pip.py \
 &&  rm get-pip.py
 
-RUN pip --no-cache-dir install dumb-init
+# Need to set no-cache-dir in pip.conf for pipenv.
+RUN mkdir ~/.pip \
+&&  printf "[global]\nno-cache-dir = false\n" > ~/.pip/pip.conf
+
+RUN pip install \
+        dumb-init \
+        pipenv
 
 ENTRYPOINT ["dumb-init"]
